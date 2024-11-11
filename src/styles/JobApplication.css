@@ -1,0 +1,94 @@
+/* Update the success animation container styles */
+.success-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  height: 100%;
+}
+
+/* Update the checkmark icon styles */
+.checkmark {
+  width: 80px; /* Reduced size */
+  height: 80px; /* Reduced size */
+  border-radius: 50%;
+  display: block;
+  stroke-width: 4;
+  stroke: #4BB543;
+  stroke-miterlimit: 10;
+  margin: 0 auto 1rem; /* Added margin bottom for spacing */
+  box-shadow: inset 0px 0px 0px #4BB543;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+  stroke: #4BB543;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+/* Success message styles */
+.success-message {
+  margin-top: 1rem;
+  color: #2d3748;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .checkmark {
+    width: 60px; /* Even smaller on mobile */
+    height: 60px;
+  }
+
+  .success-message {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkmark {
+    width: 50px; /* Smallest size for mobile */
+    height: 50px;
+  }
+
+  .success-message {
+    font-size: 1rem;
+  }
+}
+
+/* Keep existing animations */
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #4BB543;
+  }
+} 

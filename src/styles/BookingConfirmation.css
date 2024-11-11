@@ -1,0 +1,202 @@
+/* Improved Booking Confirmation Styles */
+.booking-confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.booking-confirmation-modal {
+  background: white;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border-radius: 16px;
+  text-align: center;
+  width: min(90%, 400px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  animation: modalPop 0.4s cubic-bezier(0.17, 0.89, 0.32, 1.28);
+  position: relative;
+}
+
+.processing-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.8rem, 2vw, 1.2rem);
+}
+
+.spinner {
+  font-size: clamp(3.5rem, 8vw, 4.5rem);
+  color: #2563eb;
+  animation: spin 1.2s linear infinite;
+}
+
+.processing-animation h2 {
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  color: #1e293b;
+  margin: 0;
+  animation: pulse 1.5s ease infinite;
+}
+
+.processing-animation p {
+  color: #64748b;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  margin: 0;
+}
+
+.success-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  animation: fadeScale 0.5s ease;
+  width: 100%;
+}
+
+.success-icon {
+  font-size: clamp(4rem, 10vw, 5.5rem);
+  color: #059669;
+  animation: successPop 0.6s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+  margin-bottom: 0.5rem;
+}
+
+.success-animation h2 {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  color: #1e293b;
+  margin: 0;
+  animation: fadeUp 0.5s ease 0.2s both;
+  text-align: center;
+  width: 100%;
+}
+
+.success-animation > * {
+  text-align: center;
+  width: 100%;
+}
+
+.booking-summary {
+  margin-top: 0.5rem;
+  padding: clamp(0.8rem, 3vw, 1.2rem);
+  background: #f8fafc;
+  border-radius: 12px;
+  width: 100%;
+  animation: fadeUp 0.5s ease 0.4s both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.booking-summary svg {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  color: #2563eb;
+  margin-bottom: 0.3rem;
+}
+
+.booking-time {
+  font-weight: 600;
+  color: #2563eb;
+  margin: 0;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+}
+
+/* Enhanced Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(720deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes successPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+  .booking-confirmation-modal {
+    padding: 1.25rem;
+    width: 85%;
+  }
+  
+  .booking-summary {
+    padding: 0.8rem;
+  }
+  
+  .success-icon {
+    font-size: 4rem;
+  }
+  
+  .spinner {
+    font-size: 3.5rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .booking-confirmation-modal,
+  .spinner,
+  .success-icon,
+  .success-animation,
+  .booking-summary {
+    animation: none !important;
+  }
+} 

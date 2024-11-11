@@ -1,0 +1,401 @@
+/* Modern Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Container */
+.service-booking-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Back Button */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #475569;
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.back-button:hover {
+  background: #f8fafc;
+  transform: translateX(-5px);
+}
+
+/* Service Header */
+.service-header {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+  transition: all 0.3s ease;
+}
+
+.service-icon-svg {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.service-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(37, 99, 235, 0.3);
+}
+
+.service-header h2 {
+  color: #1e293b;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.service-description {
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Booking Form */
+.booking-form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.form-section h3 {
+  color: #1e293b;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form-section h3 svg {
+  color: #2563eb;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.form-input:focus {
+  border-color: #2563eb;
+  background: white;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+textarea.form-input {
+  min-height: 120px;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+/* Service Specific Fields */
+.service-specific-fields {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+  border: 1px solid #e2e8f0;
+}
+
+/* Price Summary */
+.price-summary {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-top: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.price-item.total {
+  border-top: 2px solid #e2e8f0;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Confirm Button */
+.confirm-booking-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 1.25rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.confirm-booking-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(37, 99, 235, 0.3);
+}
+
+.confirm-booking-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .service-booking-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-booking-container {
+    padding: 1rem;
+  }
+
+  .service-header {
+    padding: 2rem 1.5rem;
+  }
+
+  .service-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .service-icon-svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .service-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .booking-form {
+    padding: 1.5rem;
+  }
+
+  .form-group {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .price-summary,
+  .service-specific-fields {
+    padding: 1.5rem;
+  }
+
+  .form-control {
+    padding: 0.75rem 1rem 0.75rem 2.25rem;
+  }
+
+  .form-group svg {
+    font-size: 1rem;
+    left: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-booking-container {
+    padding: 0.75rem;
+  }
+
+  .service-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-icon-svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .service-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .booking-form {
+    padding: 1.25rem;
+  }
+
+  .form-input {
+    padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+    font-size: 0.95rem;
+  }
+
+  .price-item {
+    font-size: 1rem;
+  }
+
+  .price-item.total {
+    font-size: 1.1rem;
+  }
+
+  .confirm-booking-btn {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Loading Animation */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-booking-content {
+  animation: slideIn 0.4s ease-out;
+}
+
+/* Additional Enhancements */
+.secure-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #059669;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.secure-badge svg {
+  color: #059669;
+}
+
+/* Form Validation Styles */
+.form-input.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Success States */
+.form-input.success {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+/* Focus state */
+.form-control:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Optional: Add some spacing between form groups */
+.form-group + .form-group {
+  margin-top: 1rem;
+} 

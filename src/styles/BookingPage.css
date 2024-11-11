@@ -1,0 +1,525 @@
+.booking-page {
+  padding: 2rem;
+  background-color: #f8fafc;
+  min-height: calc(100vh - 64px);
+}
+
+.booking-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.worker-profile {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+.worker-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.worker-info h2 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.star-icon {
+  color: #fbbf24;
+}
+
+.reviews {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+}
+
+.booking-section h3 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.date-selector {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.date-button {
+  min-width: 80px;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.date-button:hover:not(.selected) {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.date-button.selected {
+  background: #e0e7ff;
+  border-color: #2563eb;
+  color: #1e40af;
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.date-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.weekday {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.day {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.month {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Selected state specific styles */
+.date-button.selected .weekday,
+.date-button.selected .month {
+  color: #1e40af;
+}
+
+.date-button.selected .day {
+  color: #1e40af;
+  font-weight: 700;
+}
+
+/* Add a subtle pulse animation when selecting */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.date-button.selected {
+  animation: pulse 0.3s ease-in-out;
+}
+
+.time-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.time-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.time-button:hover:not(.selected):not(.unavailable) {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.time-button.selected {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.time-button.unavailable {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f1f5f9;
+}
+
+.time-icon {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .date-selector {
+    margin: 0 -1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .date-button {
+    min-width: 70px;
+  }
+
+  .time-selector {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+/* Add a subtle scrollbar for the date selector */
+.date-selector::-webkit-scrollbar {
+  height: 4px;
+}
+
+.date-selector::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.date-selector::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.hours-selector {
+  margin-bottom: 2rem;
+}
+
+.hours-input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hours-input button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.hours-input input {
+  width: 60px;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+
+.price-calculator {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border: 1px solid #e2e8f0;
+}
+
+.price-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  color: #475569;
+}
+
+.price-details.total {
+  border-top: 2px solid #e2e8f0;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1.1rem;
+}
+
+.book-button {
+  width: 100%;
+  padding: 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.book-button:hover {
+  background: #1e40af;
+}
+
+.book-button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .booking-page {
+    padding: 1rem;
+  }
+
+  .worker-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .date-selector, .time-selector {
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .date-button, .time-button {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-container {
+    padding: 1rem;
+  }
+
+  .worker-image {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.book-button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  display: inline-block;
+  margin-right: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.booking-details {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.booking-detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.booking-detail-item:last-child {
+  border-bottom: none;
+}
+
+.booking-detail-item span:first-child {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.booking-detail-item span:last-child {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.date-button, .time-button {
+  transition: all 0.3s ease;
+}
+
+.date-button:hover:not(.selected),
+.time-button:hover:not(.selected):not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.date-button.selected,
+.time-button.selected {
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+}
+
+@media (max-width: 768px) {
+  .booking-details {
+    margin: 1rem -0.5rem;
+    border-radius: 0;
+  }
+
+  .price-calculator {
+    margin: 1rem -0.5rem;
+    border-radius: 0;
+  }
+}
+
+.price-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fees-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.price-details.fee {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.price-details.fee span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price-details.subtotal {
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+
+.tip-section {
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.tip-section h4 {
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.tip-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tip-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: white;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tip-button:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.tip-button.selected {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.price-details.total {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.book-button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.book-button:hover:not(:disabled) {
+  background: #1e40af;
+}
+
+.book-button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .tip-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .price-details {
+    font-size: 0.95rem;
+  }
+} 

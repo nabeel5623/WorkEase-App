@@ -1,0 +1,306 @@
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.contact-modal {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.4s ease-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f1f5f9;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background: #e2e8f0;
+  transform: rotate(90deg);
+}
+
+.craftsman-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #e2e8f0;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.default-avatar {
+  font-size: 2rem;
+  color: #94a3b8;
+}
+
+.profile-info h2 {
+  color: #1e293b;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.star-filled {
+  color: #fbbf24;
+}
+
+.star-empty {
+  color: #e2e8f0;
+}
+
+.rating span {
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+}
+
+.craftsman-details {
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #475569;
+  margin-bottom: 0.75rem;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-item svg {
+  color: #2563eb;
+}
+
+.contact-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.contact-button.call {
+  background: #2563eb;
+  color: white;
+}
+
+.contact-button.whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button:active {
+  transform: translateY(0);
+}
+
+.contact-button.animating {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.loading-ring {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (min-width: 1024px) {
+  .contact-modal {
+    max-width: 450px;
+    padding: 2.5rem;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-info h2 {
+    font-size: 1.75rem;
+  }
+
+  .contact-button {
+    padding: 1.25rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-modal {
+    max-width: 90%;
+    padding: 1.75rem;
+  }
+
+  .profile-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profile-info h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-modal {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  .profile-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-button {
+    padding: 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .craftsman-details {
+    padding: 1rem;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  .contact-button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* High-DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .profile-image {
+    border-width: 2px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .contact-modal {
+    background: #1e293b;
+  }
+
+  .close-button {
+    background: #334155;
+    color: #94a3b8;
+  }
+
+  .profile-info h2 {
+    color: #f8fafc;
+  }
+
+  .craftsman-details {
+    background: #334155;
+  }
+
+  .detail-item {
+    color: #cbd5e1;
+  }
+} 
